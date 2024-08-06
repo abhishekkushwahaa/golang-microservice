@@ -37,6 +37,7 @@ The project contains tests for all the services. To run the tests, run the follo
 
 ```bash
 make up
+docker-compose build
 make test
 make docker-test
 make docker-test-monolith

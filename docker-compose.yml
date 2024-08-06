@@ -8,8 +8,8 @@ services:
     environment:
       - SHOP_MONOLITH_BIND_ADDR=:8080
     volumes:
-      - ./cmd/:$GO_PROJECT_DIR/cmd/
-      - ./pkg/:$GO_PROJECT_DIR/pkg/
+      - ./cmd:/go/src/github.com/abhishekkushwahaa/golang-microservice/cmd
+      - ./pkg:/go/src/github.com/abhishekkushwahaa/golang-microservice/pkg
 
   orders:
     build: .
@@ -22,8 +22,8 @@ services:
       - SHOP_RABBITMQ_ORDERS_TO_PAY_QUEUE=orders-to-pay
       - SHOP_SHOP_SERVICE_ADDR=http://shop:8080
     volumes:
-      - ./cmd/:$GO_PROJECT_DIR/cmd/
-      - ./pkg/:$GO_PROJECT_DIR/pkg/
+      - ./cmd:/go/src/github.com/abhishekkushwahaa/golang-microservice/cmd
+      - ./pkg:/go/src/github.com/abhishekkushwahaa/golang-microservice/pkg
     depends_on:
       - rabbitmq
 
@@ -31,26 +31,26 @@ services:
     build: .
     entrypoint:
       ["./docker/entrypoint.sh", "./cmd/microservices/payments/main.go"]
-    volumes:
-      - ./cmd/:$GO_PROJECT_DIR/cmd/
-      - ./pkg/:$GO_PROJECT_DIR/pkg/
     environment:
       - SHOP_RABBITMQ_ADDR=rabbitmq:5672
       - SHOP_RABBITMQ_ORDERS_TO_PAY_QUEUE=orders-to-pay
       - SHOP_ORDERS_SERVICE_ADDR=http://orders:8080
+    volumes:
+      - ./cmd:/go/src/github.com/abhishekkushwahaa/golang-microservice/cmd
+      - ./pkg:/go/src/github.com/abhishekkushwahaa/golang-microservice/pkg
     depends_on:
       - rabbitmq
 
   shop:
     build: .
     entrypoint: ["./docker/entrypoint.sh", "./cmd/microservices/shop/main.go"]
-    volumes:
-      - ./cmd/:$GO_PROJECT_DIR/cmd/
-      - ./pkg/:$GO_PROJECT_DIR/pkg/
     environment:
       - SHOP_SHOP_SERVICE_BIND_ADDR=:8080
     ports:
       - "8071:8080"
+    volumes:
+      - ./cmd:/go/src/github.com/abhishekkushwahaa/golang-microservice/cmd
+      - ./pkg:/go/src/github.com/abhishekkushwahaa/golang-microservice/pkg
     depends_on:
       - rabbitmq
 
@@ -68,4 +68,4 @@ services:
       - orders
       - monolith
     volumes:
-      - ./tests/:$GO_PROJECT_DIR/tests/
+      - ./tests:/go/src/github.com/abhishekkushwahaa/golang-microservice/tests

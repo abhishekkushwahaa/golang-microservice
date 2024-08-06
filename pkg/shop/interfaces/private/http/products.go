@@ -6,7 +6,7 @@ import (
 	common_http "github.com/abhishekkushwahaa/golang-microservice/pkg/common/http"
 	"github.com/abhishekkushwahaa/golang-microservice/pkg/common/price"
 	products_domain "github.com/abhishekkushwahaa/golang-microservice/pkg/shop/domain/products"
-	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi"
 	"github.com/go-chi/render"
 )
 

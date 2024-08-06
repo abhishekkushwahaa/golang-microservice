@@ -1,6 +1,6 @@
-FROM golang:1.13
+FROM golang:1.22.1
 
-RUN go get github.com/golang/dep/cmd/dep
+RUN go install github.com/golang/dep/cmd/dep@latest
 
 WORKDIR /go/src/github.com/abhishekkushwahaa/golang-microservice
 COPY . .

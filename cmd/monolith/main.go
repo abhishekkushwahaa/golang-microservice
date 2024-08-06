@@ -20,7 +20,7 @@ import (
 	shop_infra_product "github.com/abhishekkushwahaa/golang-microservice/pkg/shop/infrastructure/products"
 	shop_interfaces_intraprocess "github.com/abhishekkushwahaa/golang-microservice/pkg/shop/interfaces/private/intraprocess"
 	shop_interfaces_http "github.com/abhishekkushwahaa/golang-microservice/pkg/shop/interfaces/public/http"
-	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi"
 )
 
 func main() {

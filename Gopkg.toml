@@ -21,8 +21,8 @@
 
 
 [[constraint]]
-  name = "github.com/go-chi/chi/v5"
-  version = "5.1.0"
+  name = "github.com/go-chi/chi"
+  version = "3.3.2"
 
 [[constraint]]
   name = "github.com/go-chi/render"

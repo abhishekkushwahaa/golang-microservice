@@ -13,7 +13,7 @@ import (
 	orders_infra_product "github.com/abhishekkushwahaa/golang-microservice/pkg/orders/infrastructure/shop"
 	orders_private_http "github.com/abhishekkushwahaa/golang-microservice/pkg/orders/interfaces/private/http"
 	orders_public_http "github.com/abhishekkushwahaa/golang-microservice/pkg/orders/interfaces/public/http"
-	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi"
 )
 
 func main() {

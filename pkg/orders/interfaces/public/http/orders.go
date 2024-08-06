@@ -6,7 +6,7 @@ import (
 	common_http "github.com/abhishekkushwahaa/golang-microservice/pkg/common/http"
 	"github.com/abhishekkushwahaa/golang-microservice/pkg/orders/application"
 	"github.com/abhishekkushwahaa/golang-microservice/pkg/orders/domain/orders"
-	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi"
 	"github.com/go-chi/render"
 	uuid "github.com/satori/go.uuid"
 )

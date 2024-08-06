@@ -24,13 +24,21 @@ The project is built using the microservices architecture. Each service is a sep
 5. **Gorilla Mux**: Gorilla Mux is used as the router for all the services.
 6. **Gorm**: Gorm is used as the ORM for the project.
 7. **RabbitMQ**: RabbitMQ is used as the message broker. It is used for communication between services.
+8. **Testify**: Testify is used for testing in Golang.
 
 ## How to run
 
 1. Clone the repository
-2. Run `docker-compose up` to start all the services
-3. Use Postman to test the APIs
-4. Run `docker-compose down` to stop all the services
-5. Run `docker-compose down -v` to stop all the services and remove the volumes
-6. Run `docker-compose up --build` to rebuild the images and start the services
-7. Run `docker-compose up -d` to start the services in the background
+2. Run `make up` to start all the services
+
+## Testing
+
+The project contains tests for all the services. To run the tests, run the following command:
+
+```bash
+make up
+make test
+make docker-test
+make docker-test-monolith
+make docker-test-microservices
+```
